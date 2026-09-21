@@ -1,4 +1,4 @@
-ALPINE_TAG=3.13
+ALPINE_TAG=3.24
 TAG = jgodoy/iperf3\:alpine-$(ALPINE_TAG)
 
 .PHONY: build
