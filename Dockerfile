@@ -11,7 +11,7 @@ RUN git clone https://github.com/esnet/iperf.git
 
 RUN cd /iperf && \
 	./configure --enable-static-bin &&\
-	make --jobs=2 && make install
+	make --jobs=$(nproc) && make install
 
 FROM alpine:${ALPINE_TAG}
 COPY --from=build /usr/local/bin/iperf3 /usr/bin/iperf3
